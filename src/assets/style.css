@@ -1,0 +1,32 @@
+html, body, #app{
+    height: 100%;
+}
+
+body{
+    background-color: black;
+    color: white;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+#app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+h1{
+    margin: 0;
+}
+
+button{
+    background-color: #303030;
+    color: white;
+    border: none;
+    padding: 9px;
+    border-radius: 5px;
+    width: 150px;
+    cursor: pointer;
+}

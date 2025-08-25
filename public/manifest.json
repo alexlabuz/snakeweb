@@ -1,0 +1,9 @@
+{
+  "short_name": "SnakeWeb",
+  "name": "SnakeWeb",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "white",
+  "background_color": "black"
+}

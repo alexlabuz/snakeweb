@@ -1,6 +1,6 @@
 export class Snake {
-    private nbCol = 15;
-    private nbLig = 15;
+    private nbCol = 17;
+    private nbLig = 17;
     private interval = 250;
 
     public gameBoard: number[][] = [];
@@ -13,7 +13,6 @@ export class Snake {
     public isStartGame: boolean = false;
 
     constructor() {
-        this.initializeBoard();
         this.initializeGame();
     }
 
@@ -28,12 +27,11 @@ export class Snake {
     }
 
     public resetGame(){
-        this.initializeBoard();
         this.initializeGame();
     }
 
     public changeMoveDirection(moveDirection: MoveDirection){
-        if(!this.isStartGame){
+        if(!this.isStartGame && !this.isGameOver){
             // Start interval
             this.isStartGame = true;
             this.playGame(true);
@@ -52,7 +50,8 @@ export class Snake {
         return this.snakeCoordinate.length - 1;
     }
 
-    private initializeBoard(){
+    private initializeGame(){
+        // Initialize board
         for(let col = 0; col < this.nbCol; col++){
             this.gameBoard[col] = [];
 
@@ -60,9 +59,8 @@ export class Snake {
                 this.gameBoard[col][lig] = TypeCase.Empty;
             }
         }
-    }
 
-    private initializeGame(){
+        // Reset properties
         this.isGameOver = false;
         this.snakeCoordinate = [];
 

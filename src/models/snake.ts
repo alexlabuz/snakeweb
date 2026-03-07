@@ -17,6 +17,7 @@ export class Snake {
     }
 
     public playGame(play: boolean){
+        this.isStartGame = play;
         if(play){
             if(this.isStartGame){
                 this.snakeIntervalId = setInterval(() => this.moveSnake(), this.interval);
@@ -33,7 +34,6 @@ export class Snake {
     public changeMoveDirection(moveDirection: MoveDirection){
         if(!this.isStartGame && !this.isGameOver){
             // Start interval
-            this.isStartGame = true;
             this.playGame(true);
         }
 
@@ -142,7 +142,6 @@ export class Snake {
 
     private gameOver(){
         this.isGameOver = true;
-        this.isStartGame = false;
         this.playGame(false);
     }
 }
